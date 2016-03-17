@@ -12,9 +12,7 @@ Common Appboy C# code is contained in the `Plugins/Appboy` folder in the SDK. It
 
 1. You need Appboy native iOS files in your project, which are located in `Plugins/iOS` folder in this SDK. [As Unity documentation says](http://docs.unity3d.com/Manual/PluginsForIOS.html), these files need to be placed under `Plugins/iOS` folder. Since you likely have a lot of different plugins in your project, it's a good idea to copy them to `Plugins/iOS/Appboy` instead.
 
-2. Build the xcode project and confirm that Unity has copied the files `AppboyBinding.m`, `AppboyUnityManager.h`, and `AppboyUnityManager.mm` to the "Libraries" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
-
-If you copied them to `Plugins/iOS/Appboy` folder, as suggested earlier, you will find them in the `Libraries/Plugins/iOS/Appboy` folder in your iOS project.
+2. Build the xcode project and confirm that Unity has copied the files `AppboyBinding.m`, `AppboyUnityManager.h`, and `AppboyUnityManager.mm` to the "Libraries" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo. If you copied them to `Plugins/iOS/Appboy` folder, as suggested earlier, you will find them in the `Libraries/Plugins/iOS/Appboy` folder in your iOS project.
 
 3. Include AppboyUnityManager.h in your Xcode project (even though the file itself is already in the Libraries directory) by right clicking on Classes and selecting "Add Files to ..."
 
