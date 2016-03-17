@@ -6,15 +6,15 @@ To integrate Appboy into your Android Unity application, complete our <a href="h
 
 ## Plugin Setup
 
-Before you can start using Appboy in Unity scripts, you'll need to import the plugin files to your Unity project. First, clone this repo. If you're not using any other plugins, all you have to do is copy the `Plugins` directory from this repo into the `Assets` folder of your Unity project. 
-
-If you already have a `/<your-project>/Assets/Plugins` directory (probably because you're using another plugin already), copy `Plugins/Appboy/AppboyBinding.cs`, `Plugins/WindowsPhone8UnityAdapter.dll` and `Plugins/WindowsUniversalUnityAdapter.dll` into `/<your-project>/Assets/Plugins`. Then copy the contents of `Plugins/iOS`, `Plugins/Android`, `Plugins/WP8`, and `Plugins/Metro`  from this repo into `/<your-project>/Assets/Plugins/iOS`, `/<your-project>/Assets/Plugins/Android`, `/<your-project>/Assets/Plugins/WP8`, and `/<your-project>/Assets/Plugins/Metro` respectively.
+Common Appboy C# code is contained in the `Plugins/Appboy` folder in the SDK. It is not actually neccessary to copy it to the special `Plugins` folder in Unity, since it doesn't contain any native code, but you need all of these files in your project for `AppboyBindings.cs` to compile.
 
 ## iOS Setup
 
-1. First, generate your Xcode project in Unity by clicking on "File" -> "Build Settings...", then selecting iOS as the platform and clicking "Build". You'll be prompted for a name/location to build the app in. Since you'll be modifying the built output, we recommend including the built app in your project's root Unity folder (the same place that you have your `Assets` directory).
+1. You need Appboy native iOS files in your project, which are located in `Plugins/iOS` folder in this SDK. [As Unity documentation says](http://docs.unity3d.com/Manual/PluginsForIOS.html), these files need to be placed under `Plugins/iOS` folder. Since you likely have a lot of different plugins in your project, it's a good idea to copy them to `Plugins/iOS/Appboy` instead.
 
-2. Confirm that Unity has copied the files `AppboyBinding.m`, `AppboyUnityManager.h`, and `AppboyUnityManager.mm` to the "Libraries" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
+2. Build the xcode project and confirm that Unity has copied the files `AppboyBinding.m`, `AppboyUnityManager.h`, and `AppboyUnityManager.mm` to the "Libraries" directory of your generated project. Note that they will not be included in the XCode project, so you'll need to check for their presence manually. If Unity fails to copy the files automatically, manually copy them from this repo.
+
+If you copied them to `Plugins/iOS/Appboy` folder, as suggested earlier, you will find them in the `Libraries/Plugins/iOS/Appboy` folder in your iOS project.
 
 3. Include AppboyUnityManager.h in your Xcode project (even though the file itself is already in the Libraries directory) by right clicking on Classes and selecting "Add Files to ..."
 
